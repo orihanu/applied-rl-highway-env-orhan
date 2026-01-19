@@ -1,0 +1,13 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Logs and training artifacts
+logs/
+src/logs/
+
+# Model files
+*.zip
+
+# Virtual environment
+venv/
