@@ -4,7 +4,16 @@
 
 ## 👥 Group Members
 - **Orhan Yilmaz**
+  - Designed and implemented the reinforcement learning pipeline using Deep Q-Networks (DQN)
+  - Configured and customized the Highway-Env environment and reward function
+  - Implemented training scripts for untrained, half-trained, and fully-trained agents
+  - Generated evaluation results, including reward curves and training visualizations
+  - Recorded and processed GIFs demonstrating the agent’s learning progression
 - **Hocine Douar**
+  - Assisted with theoretical analysis of reinforcement learning concepts and DQN methodology
+  - Contributed to hyperparameter selection and training analysis
+  - Reviewed experimental results and provided feedback on model performance
+  - Collaborated on documentation and report structure
 
 ---
 
@@ -60,7 +69,15 @@ The fully trained agent successfully balances speed and safety, performs smooth 
   <img src="media/reward_curve.png" width="600"/>
 </p>
 
-Initially, the agent struggles due to limited experience in the replay buffer. After approximately **15,000 timesteps**, the average evaluation reward increases steadily, indicating successful learning and convergence of the DQN model.
+Initially, the agent exhibits very unstable performance due to insufficient experience stored in the replay buffer. During the early training phase (below 10,000 timesteps), the average evaluation reward remains low (around 5–7), indicating largely random behavior and frequent collisions.
+
+Between 10,000 and 15,000 timesteps, the reward shows a sharp fluctuation, including a temporary drop, which reflects the agent’s ongoing exploration and unstable policy updates while the replay buffer is still being populated.
+
+After approximately 15,000 timesteps, a clear improvement trend emerges. The average evaluation reward increases rapidly and stabilizes around 35–37, demonstrating that the agent has successfully learned effective driving strategies. In this phase, the DQN begins to balance speed and safety more consistently, resulting in fewer collisions and longer survival times.
+
+Beyond 40,000 timesteps, the reward curve shows minor oscillations around a high value, which is typical for ε-greedy policies. This behavior indicates convergence of the DQN model, where learning continues but with diminishing performance gains.
+
+Overall, the training curve confirms that the agent transitions from random exploration to a stable and efficient policy, validating the effectiveness of the chosen reward function, hyperparameters, and training setup.
 
 ---
 
